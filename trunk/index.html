@@ -4,9 +4,8 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <title>「Google API Expertが解説する Closure Libraryプログラミングガイド」書籍掲載サンプルコード</title>
   <style type="text/css">
-	body {
-	  padding: 0 5%;
-	}
+	body { padding: 0 5%; }
+	a { text-decoration: none; }
 	h1 {
 	  color: white; text-align: center; padding: 0.5em 0;
 	  border: solid 4px #253177; background-color: #4d64f3;
@@ -35,6 +34,8 @@
 	}
 	td { border: solid 1px #253177; padding: 0 0.5em; line-height: 2; }
 	.chapter { white-space: pre; }
+	ul { padding: 0; margin: 0 2em 0 4em; }
+	li { line-height: 2; margin-bottom: 1em; }
   </style>
 </head>
 <body>
@@ -44,10 +45,14 @@
 	<div class="page-title">書籍掲載サンプルコード</div>
   </h1>
   <p>
-	書籍「<a href="http://www.impressjapan.jp/books/2962" target="_blank">Google API Expertが解説する Closure Libraryプログラミングガイド</a>」（<a href="http://www.impressjapan.jp/" target="_blank">インプレスジャパン</a>発行、伊藤千光 著）の掲載サンプルコードです。ただし、Web上で実行可能なように、若干の修正を行っています。あらかじめご了承ください。ご利用に際しては、「<a href="#license">サンプルコードを利用する際の注意事項</a>」を参照してください。
+	書籍「<a href="http://www.impressjapan.jp/books/2962" target="_blank">Google API Expertが解説する Closure Libraryプログラミングガイド</a>」（<a href="http://www.impressjapan.jp/" target="_blank">インプレスジャパン</a>発行、伊藤千光 著）の掲載サンプルコードです。ただし、Web上で実行可能なように若干の修正を行っていますので、その点はご了承ください。ご利用に際しては、「<a href="#license">サンプルコードを利用する際の注意事項</a>」を参照してください。
   </p>
 
   <h2>サンプルコード目次</h2>
+
+  <p>
+	サンプルコードは以下のリンクから実際に動作を確認できます。ソースコードは<a href="http://code.google.com/p/impress-closure-book/source/browse/trunk/" target="_blank">こちら</a>からご参照ください。
+  </p>
 
   <table>
 	<thead>
@@ -56,54 +61,228 @@
 	<tbody>
 	  <tr>
 		<td class="chapter">第2章</td>
-		<td><a href="chapter2/index.html">index.html</a></td>
+		<td><a target="_blank" href="chapter2/index.html">index.html</a></td>
 		<td>色選択ウィジェットを表示し、背景色の設定とドラッグを実装したものです。</td>
 	  </tr>
 
 	  <tr>
-		<td class="chapter" rowspan="7">第3章</td>
-		<td><a href="chapter3/3.2.5-1.html">3.2.5-1.html</a></td>
+		<td class="chapter" rowspan="21">第3章</td>
+		<td><a target="_blank" href="chapter3/3.2.5-1.html">3.2.5-1.html</a></td>
 		<td>単純なクラス定義の例です。</td>
 	  </tr>
 	  <tr>
-		<td><a href="chapter3/3.2.5-2.html">3.2.5-2.html</a></td>
+		<td><a target="_blank" href="chapter3/3.2.5-2.html">3.2.5-2.html</a></td>
 		<td>クラス継承の例です。</td>
 	  </tr>
 	  <tr>
-		<td><a href="chapter3/3.2.5-3.html">3.2.5-3.html</a></td>
+		<td><a target="_blank" href="chapter3/3.2.5-3.html">3.2.5-3.html</a></td>
 		<td>クラスメソッドの例です。</td>
 	  </tr>
 	  <tr>
-		<td><a href="chapter3/3.2.6.html">3.2.6.html</a></td>
+		<td><a target="_blank" href="chapter3/3.2.6.html">3.2.6.html</a></td>
 		<td>Disposableを継承してインスタンス削除時の処理を実装する例です。</td>
 	  </tr>
 	  <tr>
-		<td><a href="chapter3/3.4--.html">3.4--.html</a></td>
+		<td><a target="_blank" href="chapter3/3.4--.html">3.4--.html</a></td>
 		<td>文字列関数の使用例です。</td>
 	  </tr>
 	  <tr>
-		<td><a href="chapter3/3.4.6.html">3.4.6.html</a></td>
-		<td>goog.Uriクラスの使用例です。Google検索にリダイレクトします。ソースはこちら。</td>
+		<td><a target="_blank" href="chapter3/3.4.6.html">3.4.6.html</a></td>
+		<td>goog.Uriクラスの使用例です。Google検索にリダイレクトします。ソースコードは<a href="http://code.google.com/p/impress-closure-book/source/browse/trunk/chapter3/3.4.6.html" target="_blank">こちら</a>。</td>
 	  </tr>
-
 	  <tr>
-		<td><a href="chapter3/3.10.1.html">3.10.1.html</a></td>
+		<td><a target="_blank" href="chapter3/3.5--.html">3.5--.html</a></td>
+		<td>配列関数の使用例です。</td>
+	  </tr>
+	  <tr>
+		<td><a target="_blank" href="chapter3/3.5.5.html">3.5.5.html</a></td>
+		<td>配列関数の反復操作（forEach）の使用例です。</td>
+	  </tr>
+	  <tr>
+		<td><a target="_blank" href="chapter3/3.6--.html">3.6--.html</a></td>
+		<td>オブジェクト関連の関数（forEach）の使用例です。</td>
+	  </tr>
+	  <tr>
+		<td><a target="_blank" href="chapter3/3.7--.html">3.7--.html</a></td>
+		<td>関数関連の関数の使用例です。</td>
+	  </tr>
+	  <tr>
+		<td><a target="_blank" href="chapter3/3.8--1.html">3.8--1.html</a></td>
+		<td>DOM要素の生成とドキュメントへの追加の例です。</td>
+	  </tr>
+	  <tr>
+		<td><a target="_blank" href="chapter3/3.8--2.html">3.8--2.html</a></td>
+		<td>goog.dom.DomHelperの使用例です。</td>
+	  </tr>
+	  <tr>
+		<td><a target="_blank" href="chapter3/3.8.8.html">3.8.8.html</a></td>
+		<td>スタイル操作の例です。</td>
+	  </tr>
+	  <tr>
+		<td><a target="_blank" href="chapter3/3.8.9.html">3.8.9.html</a></td>
+		<td>CSSセレクタによるDOM要素取得の例です。</td>
+	  </tr>
+	  <tr>
+		<td><a target="_blank" href="chapter3/3.9.1.html">3.9.1.html</a></td>
+		<td>DOM要素にイベントハンドラを設定する例です。</td>
+	  </tr>
+	  <tr>
+		<td><a target="_blank" href="chapter3/3.9.2.html">3.9.2.html</a></td>
+		<td>goog.events.EventHandlerの使用例です。</td>
+	  </tr>
+	  <tr>
+		<td><a target="_blank" href="chapter3/3.9.3.html">3.9.3.html</a></td>
+		<td>キーイベントにイベントハンドラを設定する例です。</td>
+	  </tr>
+	  <tr>
+		<td><a target="_blank" href="chapter3/3.9.4.html">3.9.4.html</a></td>
+		<td>簡単なカスタムイベントの実装例です。</td>
+	  </tr>
+	  <tr>
+		<td><a target="_blank" href="chapter3/3.10.1.html">3.10.1.html</a></td>
 		<td>単純なアニメーションです。</td>
 	  </tr>
 	  <tr>
-		<td><a href="chapter3/3.10.2.html">3.10.2.html</a></td>
+		<td><a target="_blank" href="chapter3/3.10.2.html">3.10.2.html</a></td>
 		<td>イーズイン、イーズアウトを使ったアニメーションです。</td>
 	  </tr>
 	  <tr>
-		<td><a href="chapter3/3.10.2.html">3.10.2.html</a></td>
+		<td><a target="_blank" href="chapter3/3.10.2.html">3.10.2.html</a></td>
 		<td>アニメーション・キューを利用して複数のアニメーションを組み合わせる例です。</td>
+	  </tr>
+
+	  <tr>
+		<td class="chapter">第4章</td>
+		<td><a target="_blank" href="chapter4/index.html">index.html</a></td>
+		<td>Tiny Word アプリケーションの雛形です。</td>
+	  </tr>
+
+	  <tr>
+		<td class="chapter">第5章</td>
+		<td><a target="_blank" href="chapter5/index.html">index.html</a></td>
+		<td>リッチテキストエディタを除く UI 実装後の Tiny Word です。</td>
+	  </tr>
+
+	  <tr>
+		<td class="chapter">第6章</td>
+		<td><a target="_blank" href="chapter6/index.html">index.html</a></td>
+		<td>クライアントサイドがほぼ完成した Tiny Word です。</td>
+	  </tr>
+
+	  <tr>
+		<td class="chapter">第8章</td>
+		<td><a target="_blank" href="chapter8">ファイルリスト</a></td>
+		<td>サーバーサイドを実装した Tiny Word です。実際に動作する様子は <a target="_blank" href="http://tiny-word.appspot.com/">http://tiny-word.appspot.com/</a> をご覧ください。</td>
+	  </tr>
+
+	  <tr>
+		<td class="chapter" rowspan="2">第9章</td>
+		<td><a target="_blank" href="chapter9/9.1.3.html">9.1.3.html</a></td>
+		<td>Web API 版 Closure Compiler に HTML フォームを使ってアクセスする例です。</td>
+	  </tr>
+	  <tr>
+		<td><a target="_blank" href="chapter9/9.5.4.html">9.5.4.html</a></td>
+		<td>外部参照定義ファイルの使用例です。ソースコードなどは <a target="_blank" href="http://code.google.com/p/impress-closure-book/source/browse/trunk/#trunk/chapter9">こちら</a>をご覧ください。</td>
+	  </tr>
+
+	  <tr>
+		<td class="chapter" rowspan="8">第10章</td>
+		<td><a target="_blank" href="chapter10/10.1.3.html">10.1.3.html</a></td>
+		<td>ログ出力の例です。Div要素、別ウインドウ、ブラウザコンソールの全てにログを出力します。</td>
+	  </tr>
+	  <tr>
+		<td><a target="_blank" href="chapter10/10.3.1.html">10.3.1.html</a></td>
+		<td>テストランナーの実装例です。以下のテストをすべて実行できます。</td>
+	  </tr>
+	  <tr>
+		<td><a target="_blank" href="chapter10/10.3.2.html">10.3.2.html</a></td>
+		<td>単純なテストケースです。</td>
+	  </tr>
+	  <tr>
+		<td><a target="_blank" href="chapter10/10.3.3.html">10.3.3.html</a></td>
+		<td>非同期処理のテストケースです。</td>
+	  </tr>
+	  <tr>
+		<td><a target="_blank" href="chapter10/10.3.5.html">10.3.5.html</a></td>
+		<td>ボタンのクリックイベントをシミュレートする例です。</td>
+	  </tr>
+	  <tr>
+		<td><a target="_blank" href="chapter10/10.4.1.html">10.4.1.html</a></td>
+		<td>クラスのモックを作成して、振る舞い中心のテスト (Behavior Driven Testing) を行う例です。</td>
+	  </tr>
+	  <tr>
+		<td><a target="_blank" href="chapter10/10.4.2.html">10.4.2.html</a></td>
+		<td>グローバル関数のモックを作成する例です。</td>
+	  </tr>
+	  <tr>
+		<td><a target="_blank" href="chapter10/10.4.3.html">10.4.3.html</a></td>
+		<td>ネットワークアクセス (XhrIo) のスタブを作成する例です。</td>
+	  </tr>
+
+	  <tr>
+		<td class="chapter" rowspan="13">第11章</td>
+		<td><a target="_blank" href="chapter11/11.1.1.html">11.1.1.html</a></td>
+		<td>オートコンプリートの使用例です。</td>
+	  </tr>
+	  <tr>
+		<td><a target="_blank" href="chapter11/11.1.2.html">11.1.2.html</a></td>
+		<td>バブル UI を表示します。</td>
+	  </tr>
+	  <tr>
+		<td><a target="_blank" href="chapter11/11.1.3.html">11.1.3.html</a></td>
+		<td>ホバーカードを表示します。</td>
+	  </tr>
+	  <tr>
+		<td><a target="_blank" href="chapter11/11.1.4.html">11.1.4.html</a></td>
+		<td>文字選択ウィジェットを表示します。</td>
+	  </tr>
+	  <tr>
+		<td><a target="_blank" href="chapter11/11.1.5.html">11.1.5.html</a></td>
+		<td>ダイアログ内にiframeで Google 検索を表示します。</td>
+	  </tr>
+	  <tr>
+		<td><a target="_blank" href="chapter11/11.1.6.html">11.1.6.html</a></td>
+		<td>YouTube の動画を再生します。</td>
+	  </tr>
+	  <tr>
+		<td><a target="_blank" href="chapter11/11.1.7.html">11.1.7.html</a></td>
+		<td>複雑なキーボードショートカットの実装例です。</td>
+	  </tr>
+	  <tr>
+		<td><a target="_blank" href="chapter11/11.2-1.html">11.2-1.html</a></td>
+		<td>簡単な図形描画を表示します。</td>
+	  </tr>
+	  <tr>
+		<td><a target="_blank" href="chapter11/11.2-2.html">11.2-2.html</a></td>
+		<td>図形をアニメーションさせる例です。</td>
+	  </tr>
+	  <tr>
+		<td><a target="_blank" href="chapter11/11.3.1.html">11.3.1.html</a></td>
+		<td>日本語の日付選択ウィジェットを表示します。</td>
+	  </tr>
+	  <tr>
+		<td><a target="_blank" href="chapter11/11.3.2.html">11.3.2.html</a></td>
+		<td>日付選択ウィジェットのテキストメッセージを差し替える例です。</td>
+	  </tr>
+	  <tr>
+		<td><a target="_blank" href="chapter11/11.3.3.html">11.3.3.html</a></td>
+		<td>日時をフォーマットして表示します。</td>
+	  </tr>
+	  <tr>
+		<td><a target="_blank" href="chapter11/11.3.4.html">11.3.4.html</a></td>
+		<td>数値をフォーマットして表示します。</td>
 	  </tr>
 	</tbody>
   </table>
 
   <h2 id="license">サンプルコードを利用する際の注意事項</h2>
+
+  <p>
+	サンプルコードは、商用製品での使用も含めて自由に利用できます。クレジットなども不要です。ただし、以下の点をご理解の上、ご使用ください。
+  </p>
+
   <ul>
-	<li>このサンプルコードに含まれるファイル・コードのうち、 Closure Library 由来のもの（Closure Library からコピーした CSS や画像ファイル、 closurebuilder.py でまとめた .js ファイルなど）は Apache License 2.0 に従います。</li>
+	<li>このサンプルコードに含まれるファイル・コードのうち、 Closure Library 由来のもの（Closure Library からコピーした CSS や画像ファイル、 closurebuilder.py でまとめた .js ファイルなど）は Apache License 2.0 に従います。詳細は <a href="http://code.google.com/p/closure-library/" target="_blank">Closure Library のプロジェクトサイト</a>をご参照ください。</li>
 	<li>このサンプルコードは無保証です。これにより生じる損害などについて、作者は一切の責任を負いません。各自の責任において利用してください。</li>
   </ul>
 </body>
