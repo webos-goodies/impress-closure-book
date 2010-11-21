@@ -1,0 +1,42 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>11章 サンプル</title>
+  <!--
+  <script type="text/javascript" src="closure-library/closure/goog/base.js"></script>
+  -->
+</head>
+
+<body>
+
+<!--
+<script type="text/javascript">
+  goog.require('goog.graphics');
+  goog.require('goog.graphics.Font');
+</script>
+-->
+
+<!-- 上記のgoog.require()をまとめたファイル -->
+<script type="text/javascript" src="built.js"></script>
+
+<script type="text/javascript">
+  var g = goog.graphics.createGraphics(360, 360);
+  g.render();
+
+  var frame = 0;
+  var shape = g.drawRect(0, 0, 100, 100,
+    new goog.graphics.Stroke(2, '#000000'),
+    new goog.graphics.SolidFill('#ffff00'));
+
+  window.setInterval(function() {
+    frame += 1;
+    var anim = Math.sin(frame / 15);
+    var level = Math.round((anim/2 + 0.5) * 15);
+    var color = '#' + level.toString(16) + (15 - level).toString(16) + '0';
+    shape.setTransformation(anim * 130 + 130, 10, 0, 0, 0);
+    shape.setFill(new goog.graphics.SolidFill(color));
+  }, 1000.0/15);
+</script>
+
+</body>
+</html>

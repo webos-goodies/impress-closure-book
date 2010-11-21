@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>テストページ</title>
+  <!--
+  <script type="text/javascript"
+		  src="closure-library/closure/goog/base.js"></script>
+  <script type="text/javascript">
+	goog.require('goog.testing.jsunit');
+	goog.require('goog.ui.tree.TreeControl');
+	goog.require('goog.testing.MockClassFactory');
+  </script>
+  -->
+  <!-- 上記のgoog.require()をまとめたファイル -->
+  <script type="text/javascript" src="built_test.js"></script>
+</head>
+<body>
+  <input id="button">
+  <script type="text/javascript">
+	function createTreeControl(html) {
+	  var tree = new goog.ui.tree.TreeControl(html);
+	  if(!tree.getShowRootNode()) {
+	    tree.setShowRootNode(true);
+	  }
+	  tree.render();
+	  return tree;
+	}
+
+	function testCreateTreeControl() {
+	  var tree = createTreeControl('/');
+	  assertTrue(tree instanceof goog.ui.tree.TreeControl);
+	  assertTrue(tree.isInDocument());
+	  assertTrue(tree.getShowRootNode());
+	  tree.dispose();
+	}
+
+	var mockFactory = new goog.testing.MockClassFactory();
+
+	function testCreateTreeControlWithMock() {
+	  var mock = mockFactory.getStrictMockClass(
+	  goog.ui.tree, goog.ui.tree.TreeControl, '/');
+	  mock.getShowRootNode().$returns(false);
+	  mock.setShowRootNode(true);
+	  mock.render();
+	  mock.$replay();
+	  var tree = createTreeControl('/');
+	  mock.$verify();
+	}
+
+	function tearDown() {
+	  mockFactory.reset();
+	}
+  </script>
+</body>
+</html>

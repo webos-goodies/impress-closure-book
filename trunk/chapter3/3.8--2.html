@@ -1,0 +1,42 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>3章 サンプル</title>
+  <!--
+  <script type="text/javascript" src="closure-library/closure/goog/base.js"></script>
+  -->
+</head>
+
+<body>
+
+  <!--
+  <script type="text/javascript">
+    goog.require('goog.dom');
+    goog.require('goog.dom.DomHelper');
+  </script>
+  -->
+
+  <!-- 上記のgoog.require()をまとめたファイル -->
+  <script type="text/javascript" src="build.js"></script>
+
+  <script type="text/javascript">
+
+// IFRAMEを作成
+var iframe = goog.dom.createDom('IFRAME', { 'src':'about:blank' });
+goog.dom.appendChild(document.body, iframe);
+
+// IFRAME内のドキュメントを操作するDomHelperインスタンスを作成
+var ifdoc = goog.dom.getFrameContentDocument(iframe);
+var helper = goog.dom.getDomHelper(ifdoc);
+
+// IFRAME内にDOM要素を挿入
+var node = helper.createDom(
+  'DIV', null,
+  helper.createDom('SPAN', { 'style':'color: red;' }, 'Hello '),
+  helper.createDom('SPAN', { 'style':'color: blue;' }, 'World!'));
+helper.appendChild(ifdoc.body, node);
+
+  </script>
+
+</body>
+</html>

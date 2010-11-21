@@ -1,0 +1,1 @@
+google.load("language","1");google.setOnLoadCallback(function(){google.language.translate(document.getElementById("ja-text").value,"ja","en",function(a){if(a.translation)document.getElementById("en-text").value=a.translation})});

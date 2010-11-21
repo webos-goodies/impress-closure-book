@@ -1,0 +1,12 @@
+/* 最低限のファイルで動作させるため、パスを変更 */
+@import "closure-library/css/common.css";
+
+/* ページスクロールバー非表示 */
+html { overflow: hidden; }
+body { overflow: hidden; margin: 4px; }
+
+/* タイトル */
+#title {
+  font-size: 40px; margin: 0px;
+  padding-bottom: 20px; font-style: italic;
+}

@@ -1,0 +1,56 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>3章 サンプル</title>
+  <!--
+  <script type="text/javascript" src="closure-library/closure/goog/base.js"></script>
+  -->
+</head>
+
+<body>
+
+<style type="text/css">
+.floatRect { position:relative; width:10px; height:10px; }
+</style>
+
+<div id="mover1" class="floatRect" style="background-color:red;"></div>
+<div id="mover2" class="floatRect" style="background-color:blue;"></div>
+
+<input type="button" value="開始" onclick="anim.play();">
+<input type="button" value="終了" onclick="anim.stop();">
+<input type="button" value="停止" onclick="anim.pause();">
+
+<!--
+<script type="text/javascript">
+  goog.require('goog.dom');
+  goog.require('goog.fx.dom.Slide');
+  goog.require('goog.fx.AnimationParallelQueue');
+  goog.require('goog.fx.AnimationSerialQueue');
+</script>
+-->
+
+<!-- 上記のgoog.require()をまとめたファイル -->
+<script type="text/javascript" src="build.js"></script>
+
+<script type="text/javascript">
+  var el1 = goog.dom.getElement('mover1');
+  var el2 = goog.dom.getElement('mover2');
+
+  // 2つのDIVを同時に右へ移動させるアニメーション
+  var anim1 = new goog.fx.AnimationParallelQueue();
+  anim1.add(new goog.fx.dom.Slide(el1, [0, 0], [100, 0], 1000));
+  anim1.add(new goog.fx.dom.Slide(el2, [0, 0], [100, 0], 1000));
+
+  // 同じく、元の位置へ戻すアニメーション
+  var anim2 = new goog.fx.AnimationParallelQueue();
+  anim2.add(new goog.fx.dom.Slide(el1, [100, 0], [0, 0], 1000));
+  anim2.add(new goog.fx.dom.Slide(el2, [100, 0], [0, 0], 1000));
+
+  // 上記の右へ行って戻るアニメーションを順次実行
+  var anim = new goog.fx.AnimationSerialQueue();
+  anim.add(anim1);
+  anim.add(anim2);
+</script>
+
+</body>
+</html>

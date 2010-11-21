@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Tiny Word</title>
+  <link rel="stylesheet" href="files/stylesheet.css">
+  <!--
+  <script type="text/javascript"
+          src="closure-library/closure/goog/base.js"></script>
+  <script type="text/javascript" src="deps.js"></script>
+  -->
+  <script type="text/javascript">
+    window['user_id'] = "{{user_id|urlencode|addslashes}}";
+  </script>
+</head>
+<body>
+  <h1 id="title">Tiny Word</h1>
+
+  <!-- このdiv内にアプリケーションUIを表示する -->
+  <div id="main"></div>
+
+  <!-- ユーザー名（メールアドレス）とログアウトボタン -->
+  <div id="user-info">
+	{% if login_url %}
+      <a href="{{login_url|escape}}">ログイン</a>
+	{% else %}
+      <b>{{user_name|escape}}</b> | <a href="{{logout_url|escape}}">ログアウト</a>
+	{% endif %}
+  </div>
+
+  <!-- アクセスインジケータ -->
+  {% if login_url %}
+    <div id="xhr-indicator" style="display:none;">アクセス中</div>
+  {% else %}
+	<div id="xhr-indicator">アクセス中</div>
+  {% endif %}
+
+  <!-- ダイアログの内容 -->
+  <div style="display:none;">
+	<div id="dialog-contents">
+	  <div>
+		このサービスは、書籍「<a target="_blank" href="http://direct.ips.co.jp/book/Template/Goods/go_BookstempGR.cfm?GM_ID=2962&SPM_ID=1&CM_ID=004000K90&PM_No=&PM_Class=&HN_NO=">Google API Expertが解説する Closure Libraryプログラミングガイド</a>」（インプレスジャパン発行）のサンプルアプリケーションです。実用に耐えるよう設計されたものではありません。とくに以下の点にご留意ください。
+	  </div>
+	  <ul>
+		<li>サービスは予告なく変更・停止・閉鎖することがあります。</li>
+		<li>データは予告なく削除されることがあります。重要なデータは保存しないでください。また、個人情報やその他の機密データは入力しないでください。</li>
+		<li>その他、このサービスを利用することによるあらゆる損害について、作者は責任を負いません。自己の責任においてご利用ください。</li>
+	  </ul>
+	  <div style="font-size:;90%; color:gray">
+		このサービスは <a target="_blank" href="http://code.google.com/p/closure-library/" style="color:gray">Closure Library</a> を利用しています。
+	  </div>
+	</div>
+  </div>
+
+  <!-- app.jsを読み込む -->
+  <!--
+  <script type="text/javascript">
+    goog.require('tinyword.App');
+  </script>
+  -->
+  <script type="text/javascript" src="files/script.js"></script>
+</body>
+</html>
