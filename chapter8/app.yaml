@@ -1,0 +1,28 @@
+application: tinyword
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /closure-library
+  static_dir: closure-library
+
+- url: /files
+  static_dir: files
+
+- url: /.*
+  script: main.py
+  login: required
+
+skip_files:
+- ^(.*/)?app\.yaml
+- ^(.*/)?app\.yml
+- ^(.*/)?index\.yaml
+- ^(.*/)?index\.yml
+- ^(.*/)?#.*#
+- ^(.*/)?.*~
+- ^(.*/)?.*\.py[co]
+- ^(.*/)?.*/RCS/.*
+- ^(.*/)?\..*
+- ^(.*/)?.*\.bak$
+- ^closure-library/.*\.(js|html)

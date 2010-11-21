@@ -1,0 +1,59 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>11章 サンプル</title>
+  <link rel="stylesheet" href="files/css/common.css">
+  <link rel="stylesheet" href="files/css/hovercard.css">
+  <!--
+  <script type="text/javascript" src="closure-library/closure/goog/base.js"></script>
+  -->
+</head>
+
+<body>
+
+<p><a href="http://www.google.com/">ホバーカードを表示</a></p>
+<p><a href="http://www.google.com/">ホバーカードを表示</a></p>
+
+<div id="content" style="display:none; position:absolute;">
+  <div style="position:relative;left:2px;z-index:100">
+    <table class="goog-hovercard-icons">
+      <tr><td>ラベル1</td><td>ラベル2</td><td>ラベル3</td></tr>
+    </table>
+    <table class="goog-hovercard-content">
+      <tr><td valign="top">表示内容</td></tr>
+    </table>
+  </div>
+  <script>
+    function writeDiv(top, left) {
+      var width = 300 + 10, height = 115 + 10;
+      document.write(
+        '<div class="goog-shadow" style="position:absolute;left:' +
+        left + 'px;top:' + top + 'px;width:' +
+        width + 'px;height:' + height + 'px;z-index:10" ></div>\n');
+    }
+    var y = 0, left = 0, size = 6;
+    for (var i = 0; i < size; ++i) {
+      for (var j = 0; j < size; ++j) {
+        writeDiv(y + i, left + j);
+      }
+    }
+  </script>
+</div>
+
+<!--
+<script type="text/javascript">
+  goog.require('goog.ui.HoverCard');
+</script>
+-->
+
+<!-- 上記のgoog.require()をまとめたファイル -->
+<script type="text/javascript" src="built.js"></script>
+
+<script type="text/javascript">
+  var card = new goog.ui.HoverCard({ 'A': 'href' });
+  card.setElement(goog.dom.getElement('content'));
+  card.className = 'goog-hovercard';
+</script>
+
+</body>
+</html>

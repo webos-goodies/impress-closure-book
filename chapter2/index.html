@@ -1,0 +1,42 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>2章 サンプル</title>
+  <link rel="stylesheet"
+        href="files/closure-library/css/common.css"> <!-- 書籍とはパスを変更しています -->
+  <link rel="stylesheet"
+        href="files/closure-library/css/hsvpalette.css"> <!-- 書籍とはパスを変更しています -->
+  <!--
+  <script type="text/javascript"
+          src="closure-library/closure/goog/base.js"></script>
+  <script type="text/javascript" src="deps.js"></script>
+  -->
+</head>
+
+<body>
+
+  <div id="dragframe" style="width:402px; position:relative">
+
+    <!-- ドラッグ用のハンドル -->
+    <div id="handle" style="background-color:gray; color:white">
+      ここをドラッグ
+    </div>
+
+    <!-- このdiv内にパレットを表示する -->
+    <div id="palette"></div>
+
+    <!-- 背景色設定ボタン -->
+    <input type="button" value="背景色に設定" id="bgcolor-btn">
+
+  </div>
+
+  <!-- app.jsを読み込む -->
+  <!--
+  <script type="text/javascript">
+    goog.require('chapter2.App');
+  </script>
+  -->
+  <script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>

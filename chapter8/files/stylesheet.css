@@ -1,0 +1,72 @@
+/* 最低限のファイルで動作させるため、書籍とはパスが違います */
+@import "closure-library/css/common.css";
+@import "closure-library/css/button.css";
+@import "closure-library/css/menu.css";
+@import "closure-library/css/menubutton.css";
+@import "closure-library/css/menuitem.css";
+@import "closure-library/css/menuseparator.css";
+@import "closure-library/css/toolbar.css";
+@import "closure-library/css/tree.css";
+@import "closure-library/css/tab.css";
+@import "closure-library/css/tabbar.css";
+@import "closure-library/css/dialog.css";
+@import "closure-library/css/colormenubutton.css";
+@import "closure-library/css/palette.css";
+@import "closure-library/css/colorpalette.css";
+@import "closure-library/css/editor/dialog.css";
+@import "closure-library/css/editor/linkdialog.css";
+@import "closure-library/css/editortoolbar.css";
+
+/* ページスクロールバー非表示 */
+html { overflow: hidden; }
+body { overflow: hidden; margin: 4px; }
+
+/* タイトル */
+#title {
+  font-size: 40px; margin: 0px;
+  padding-bottom: 20px; font-style: italic;
+}
+
+/* SplitPane */
+.goog-splitpane-first-container {
+  border: 1px solid #6b90da;
+}
+.goog-splitpane-handle {
+  background: #ccc; cursor: col-resize;
+  border: solid 1px white; border-style: none solid
+}
+
+/* ツリーコントロール */
+.leftpane-tree  { overflow: auto; }
+.goog-tree-root { margin: 4px; }
+.selected .goog-tree-item-label { background-color: rgb(192,192,192); }
+
+/* タブバー */
+.rightpane-tabbar { padding-left: 4px; font-size: 12px; }
+.rightpane-content { border: 1px solid #6b90da; overflow: auto; }
+
+/* リッチテキストエディタ */
+.editable { width: 100%; display: block; }
+
+/* 保存ダイアログ */
+.modal-dialog  { z-index: 11; }
+.savedlg       { font-size: 14px; }
+.savedlg-fname { width: 300px; }
+.savedlg-tree  {
+  width: 400px; height: 200px; overflow: auto;
+  margin: 4px; padding: 4px; border: solid 1px gray;
+}
+
+/* ユーザー名とログアウトボタン */
+#user-info {
+  font-size: 14px; text-align:right; z-index: 1;
+  position: absolute; right: 4px; top: 0;
+}
+
+/* アクセスインジケータ */
+#xhr-indicator {
+  font-weight: bold; color: white; background-color: red;
+  position: absolute; left: 50%; top: 0; z-index: 2;
+  width: 200px; margin-left: -100px; padding: 4px 0;
+  text-align: center;
+}

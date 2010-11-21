@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>テストランナー</title>
+  <!--
+  <script type="text/javascript"
+		  src="closure-library/closure/goog/base.js"></script>
+  <script type="text/javascript">
+	goog.require('goog.testing.MultiTestRunner');
+  </script>
+  -->
+  <!-- 上記のgoog.require()をまとめたファイル -->
+  <script type="text/javascript" src="built.js"></script>
+
+  <!--
+  <link rel="stylesheet" type="text/css"
+		href="closure-library/closure/goog/css/multitestrunner.css">
+  -->
+  <!-- 上記と同内容のCSSファイル -->
+  <link rel="stylesheet" type="text/css" href="files/closure-library/css/multitestrunner.css">
+</head>
+<body>
+  <div id="runner"></div>
+  <script type="text/javascript">
+	var testRunner = new goog.testing.MultiTestRunner();
+	testRunner.addTests([
+	  '10.3.2.html', '10.3.3.html', '10.3.5.html',
+	  '10.4.1.html', '10.4.2.html', '10.4.3.html']);
+	testRunner.render(document.getElementById('runner'));
+  </script>
+  ※ WebKitベースのブラウザの場合、ローカルファイルの状態 (file://) ではテストが実行できません。なんらかのWebサーバーにアップロードした上でお試しください。
+</body>
+</html>

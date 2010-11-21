@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>テストページ</title>
+  <!--
+  <script type="text/javascript"
+		  src="closure-library/closure/goog/base.js"></script>
+  <script type="text/javascript">
+	goog.require('goog.testing.jsunit');
+
+	// その他、テストに必要なクラスをrequireする
+	goog.require('goog.ds.DataManager');
+	goog.require('goog.ds.JsDataSource');
+	goog.require('goog.ds.Expr');
+  </script>
+  -->
+  <!-- 上記のgoog.require()をまとめたファイル -->
+  <script type="text/javascript" src="built_test.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+	function testGetNode() {
+	  var node = goog.ds.Expr.create('$FileTree/entry/f1').getNode();
+	  assertNotNullNorUndefined('ノードの取得', node);
+	  assertEquals('フォルダノード', 'folder', node.getChildNodeValue('@type'));
+	  assertEquals('フォルダ名', 'フォルダ1', node.getChildNodeValue('#text'));
+	}
+
+	function setUp() {
+	  var dm = goog.ds.DataManager.getInstance();
+	  dm.addDataSource(new goog.ds.JsDataSource(
+	    { "entry": { "f1": { "#text": "フォルダ1", "@type": "folder" } } },
+	    'FileTree'), true);
+	}
+
+	function tearDown() {
+	  goog.ds.DataManager.clearInstance();
+	}
+  </script>
+</body>
+</html>

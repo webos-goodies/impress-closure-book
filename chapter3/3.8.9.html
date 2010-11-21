@@ -1,0 +1,35 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>3章 サンプル</title>
+  <!--
+  <script type="text/javascript" src="closure-library/closure/goog/base.js"></script>
+  -->
+</head>
+
+<body>
+
+<ul id="list">
+  <li>item1</li><li>item2</li><li>item3</li><li>item4</li>
+</ul>
+
+<!--
+<script type="text/javascript">
+  goog.require('goog.dom.query');
+  goog.require('goog.style');
+  goog.require('goog.array');
+</script>
+-->
+
+<!-- 上記のgoog.require()をまとめたファイル -->
+<script type="text/javascript" src="build.js"></script>
+
+<script type="text/javascript">
+  var odd = goog.dom.query('#list > li:nth-child(odd)');
+  goog.array.forEach(odd, function(el) {
+    goog.style.setStyle(el, 'background-color', '#cff');
+  });
+</script>
+
+</body>
+</html>

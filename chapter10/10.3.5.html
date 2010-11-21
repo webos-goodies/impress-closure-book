@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>テストページ</title>
+  <!--
+  <script type="text/javascript"
+		  src="closure-library/closure/goog/base.js"></script>
+  <script type="text/javascript">
+	goog.require('goog.testing.jsunit');
+	goog.require('goog.dom');
+	goog.require('goog.testing.events');
+  </script>
+  -->
+  <!-- 上記のgoog.require()をまとめたファイル -->
+  <script type="text/javascript" src="built_test.js"></script>
+</head>
+<body>
+  <input id="button">
+  <script type="text/javascript">
+	var clickFlag = false;
+
+	function onclick(e) {
+	  clickFlag = true;
+	}
+	goog.events.listen(
+	  goog.dom.getElement('button'), goog.events.EventType.CLICK, onclick);
+	function testOnClick() {
+	  clickFlag = false;
+	  goog.testing.events.fireClickEvent(goog.dom.getElement('button'));
+	  assertTrue(clickFlag);
+	};
+  </script>
+</body>
+</html>
