@@ -8,7 +8,9 @@ from google.appengine.ext import db
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp import util
 from google.appengine.ext.webapp import template
-from django.utils import simplejson
+# Python 2.7で動作させるため、simplejsonモジュールを標準のjsonモジュールに置き換えています。
+#from django.utils import simplejson
+import json
 
 # リクエストエラーの例外
 class HttpError(RuntimeError):
@@ -27,7 +29,7 @@ class UserData(db.Model):
   next_id = db.IntegerProperty(default=0)
 
   def get_tree_obj(self):
-    return simplejson.loads(self.tree)
+    return json.loads(self.tree)
 
   def get_next_id(self):
     self.next_id = self.next_id + 1
@@ -59,13 +61,13 @@ class TopPageHandler(webapp.RequestHandler):
 class BaseHandler(webapp.RequestHandler):
   def post(self, user_id):
     self.validate_request(user_id)
-    req_body = simplejson.loads(self.request.body)
+    req_body = json.loads(self.request.body)
     res_body = db.run_in_transaction(self.handle_post, req_body)
     self.output_json(res_body)
 
   def put(self, user_id):
     self.validate_request(user_id)
-    req_body = simplejson.loads(self.request.body)
+    req_body = json.loads(self.request.body)
     res_body = db.run_in_transaction(self.handle_put, req_body)
     self.output_json(res_body)
 
@@ -96,7 +98,7 @@ class BaseHandler(webapp.RequestHandler):
 
   def output_json(self, data):
     self.response.headers['Content-Type'] = 'application/json'
-    self.response.out.write('while(1);' + simplejson.dumps(data))
+    self.response.out.write('while(1);' + json.dumps(data))
 
   def validate_request(self, user_id, check_type=True):
     user = users.get_current_user()
@@ -138,7 +140,7 @@ class BaseHandler(webapp.RequestHandler):
     key    = 'f%d' % user_data.get_next_id()
     if parent and parent['@type'] == 'folder':
       parent.setdefault('entry', {})[key] = value
-      user_data.tree = simplejson.dumps(tree)
+      user_data.tree = json.dumps(tree)
       user_data.put()
     else:
       raise HttpError(500)
@@ -169,7 +171,7 @@ class TreeHandler(BaseHandler):
       raise HttpError(404)
     if '#text' in req_body:
       node['#text'] = req_body['#text']
-      user_data.tree = simplejson.dumps(tree)
+      user_data.tree = json.dumps(tree)
       user_data.put()
     return {}
 
@@ -191,7 +193,7 @@ class TreeHandler(BaseHandler):
           file.delete()
 
       del entries[paths[2]]
-      user_data.tree = simplejson.dumps(tree)
+      user_data.tree = json.dumps(tree)
       user_data.put()
       return {}
     else:
